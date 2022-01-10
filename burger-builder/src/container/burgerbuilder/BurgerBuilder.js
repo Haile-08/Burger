@@ -19,8 +19,19 @@ class BurgerBuilder extends Component {
       meat: 0,
     },
     totalprice: 0,
+    purchasable: false,
   };
 
+  updatepurchase = (ingredients) => {
+    const sum = Object.keys(ingredients)
+      .map((igkey) => {
+        return ingredients[igkey];
+      })
+      .reduce((sum, el) => {
+        return sum + el;
+      }, 0);
+    this.setState({ purchasable: sum > 0 });
+  };
   addIngredientHandler = (type) => {
     const oldcount = this.state.ingredients[type];
     const updatedcount = oldcount + 1;
@@ -33,6 +44,7 @@ class BurgerBuilder extends Component {
       totalprice: priceaddition,
       ingredients: updatedIngredient,
     });
+    this.updatepurchase(updatedIngredient);
   };
   RemoveIngredientHandler = (type) => {
     const oldcount = this.state.ingredients[type];
@@ -49,6 +61,7 @@ class BurgerBuilder extends Component {
       totalprice: priceremove,
       ingredients: updatedIngredient,
     });
+    this.updatepurchase(updatedIngredient);
   };
   render() {
     return (
@@ -58,6 +71,7 @@ class BurgerBuilder extends Component {
           ingredientAdded={this.addIngredientHandler}
           ingredientRemoved={this.RemoveIngredientHandler}
           price={this.state.totalprice}
+          purchasable={this.state.purchasable}
         />
       </Aux>
     );

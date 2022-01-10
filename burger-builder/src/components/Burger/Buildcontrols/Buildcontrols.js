@@ -22,6 +22,12 @@ const Buildcontrols = (props) => {
           removed={() => props.ingredientRemoved(ctrl.type)}
         />
       ))}
+      <button
+        className="my-5 border-2 p-4 rounded hover:bg-amber-600 disabled:bg-amber-900"
+        disabled={!props.purchasable}
+      >
+        ORDER NOW
+      </button>
     </div>
   );
 };
