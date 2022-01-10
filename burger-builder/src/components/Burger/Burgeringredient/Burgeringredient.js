@@ -10,7 +10,7 @@ class Burgeringredient extends Component {
     switch (this.props.type) {
       case "bread-bottom":
         ingredient = (
-          <div className=" h-1/4 w-5/6 rounded-b-[30px] m-[2%] shadow-inner-[-15px_0px_rgb(193, 87, 17)] bg-gradient-to-r from-orange-300 to-orange-600  ">
+          <div className=" h-1/4 w-[80%] rounded-b-[30px] m-[2%] shadow-inner-[-15px_0px_rgb(193, 87, 17)] bg-gradient-to-r from-orange-300 to-orange-600  ">
             <h1 className="opacity-0">.</h1>
           </div>
         );
@@ -19,7 +19,7 @@ class Burgeringredient extends Component {
         ingredient = (
           <div className="h-1/4 w-4/5 rounded-t-[50%] relative m-[2%] shadow-inner-[-15px_0px_rgb(193, 87, 17)] bg-gradient-to-r from-orange-300 to-orange-600">
             <h1 className="opacity-0">.</h1>
-            <div className="h-[15%] w-[10%] absolute bg-white left-[30%] top-[50%] rounded-[40%] rotate-[-20deg] shadow-inner-[-2px_-3px_rgb(201, 201, 201)]">
+            <div className="h-[15%] w-[10%] absolute bg-white left-[30%] top-[50%] rounded-[40%] rotate-[-20deg] shadow-lg shadow-inner-[-2px_-3px_rgb(201, 201, 201)]">
               <h1 className="opacity-0">.</h1>
             </div>
             <div className="h-[15%] w-[10%] absolute bg-white left-[64%] top-[50%] rounded-[40%] rotate-[40deg] shadow-inner-[-3px_0px_rgb(201, 201, 201)]">
