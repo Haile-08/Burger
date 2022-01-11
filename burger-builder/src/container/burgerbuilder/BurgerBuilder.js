@@ -28,6 +28,11 @@ class BurgerBuilder extends Component {
   purchaseHandler = () => {
     this.setState({ purchaseing: true });
   };
+
+  purchasecloseHandler = () => {
+    this.setState({ purchaseing: false });
+  };
+
   updatepurchase = (ingredients) => {
     const sum = Object.keys(ingredients)
       .map((igkey) => {
@@ -72,7 +77,10 @@ class BurgerBuilder extends Component {
   render() {
     return (
       <Aux>
-        <Modal show={this.state.purchaseing}>
+        <Modal
+          show={this.state.purchaseing}
+          modalclose={this.purchasecloseHandler}
+        >
           <Ordersummary ingredients={this.state.ingredients} />
         </Modal>
         <Burger ingredients={this.state.ingredients} />
