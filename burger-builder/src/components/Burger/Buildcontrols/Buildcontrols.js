@@ -23,7 +23,7 @@ const Buildcontrols = (props) => {
         />
       ))}
       <button
-        className="my-5 border-2 p-4 rounded hover:bg-amber-600 disabled:bg-amber-900"
+        className="my-5 border-2 p-4 rounded hover:bg-amber-600  ease-out duration-300 disabled:bg-black disabled:text-white"
         disabled={!props.purchasable}
       >
         ORDER NOW
