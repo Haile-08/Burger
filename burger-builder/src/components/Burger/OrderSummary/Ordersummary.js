@@ -20,6 +20,9 @@ const Ordersummary = (props) => {
         A Burger with the following ingredients:
       </p>
       <ul className=" w-auto font-sans font-mono">{ingredientsummary}</ul>
+      <p>
+        <strong>Total price : {props.price}</strong>
+      </p>
       <p className="m-3 font-sans font-mono">Continue to cheekout? </p>
       <div className="flex  justify-center items-center">
         <button
