@@ -4,6 +4,7 @@ import Aux from "../../hoc/Aux";
 import Burger from "../../components/Burger/Burger";
 import Buildcontrols from "../../components/Burger/Buildcontrols/Buildcontrols";
 import Modal from "../../components/UI /Modal/Modal";
+import Ordersummary from "../../components/Burger/OrderSummary/Ordersummary";
 
 const IngredientPrice = {
   salad: 0.6,
@@ -21,8 +22,12 @@ class BurgerBuilder extends Component {
     },
     totalprice: 0,
     purchasable: false,
+    purchaseing: false,
   };
 
+  purchaseHandler = () => {
+    this.setState({ purchaseing: true });
+  };
   updatepurchase = (ingredients) => {
     const sum = Object.keys(ingredients)
       .map((igkey) => {
@@ -67,13 +72,16 @@ class BurgerBuilder extends Component {
   render() {
     return (
       <Aux>
-        <Modal />
+        <Modal show={this.state.purchaseing}>
+          <Ordersummary ingredients={this.state.ingredients} />
+        </Modal>
         <Burger ingredients={this.state.ingredients} />
         <Buildcontrols
           ingredientAdded={this.addIngredientHandler}
           ingredientRemoved={this.RemoveIngredientHandler}
           price={this.state.totalprice}
           purchasable={this.state.purchasable}
+          orderd={this.purchaseHandler}
         />
       </Aux>
     );
