@@ -6,7 +6,7 @@ import Toolbar from "../Navigation/Toolbar/Toolbar";
 const Layout = (props) => (
   <Aux>
     <Toolbar />
-    <main className="my-[76px]">{props.children}</main>
+    <main className="my-[120px]">{props.children}</main>
   </Aux>
 );
 
